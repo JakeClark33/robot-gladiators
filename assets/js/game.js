@@ -3,6 +3,7 @@
 //    * Fight all enemy-robots
 //    * Defeat each enemy-robot
 // "LOSE" - Player robot's health is zero or less
+window.alert("Welcome to Robot Gladiators!");
 
 var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
@@ -25,30 +26,19 @@ for(var i = 0; i < enemyNames.length; i++) {
 }
 var fight = function(enemyName) {
   // Alert players that they are starting the round
-  window.alert("Welcome to Robot Gladiators!");
 }
-console.log();
-var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
-  console.log(promptFight);
- // if player choses to fight, then fight
-if (promptFight === "fight" || promptFight === "FIGHT") {
-  // remove enemy's health by subtracting the amount set in the playerAttack variable
-  enemyHealth = enemyHealth - playerAttack;
-  console.log(
-    playerName + " attacked " +  + ". " +  + " now has " + enemyHealth + " health remaining."
-  );
 
   // check enemy's health
   if (enemyHealth <= 0) {
-    window.alert( + " has died!");
+    window.alert(i + " has died!");
   } else {
-    window.alert( + " still has " + enemyHealth + " health left.");
+    window.alert(i + " still has " + enemyHealth + " health left.");
   }
 
   // remove player's health by subtracting the amount set in the enemyAttack variable
   playerHealth = playerHealth - enemyAttack;
   console.log(
-     + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
+    i + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
   );
 
   // check player's health
@@ -57,6 +47,15 @@ if (promptFight === "fight" || promptFight === "FIGHT") {
   } else {
     window.alert(playerName + " still has " + playerHealth + " health left.");
   }
+  var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
+  console.log(promptFight);
+ // if player choses to fight, then fight
+if (promptFight === "fight" || promptFight === "FIGHT") {
+  // remove enemy's health by subtracting the amount set in the playerAttack variable
+  enemyHealth = enemyHealth - playerAttack;
+  console.log(
+    playerName + " attacked " + i + ". " + i + " now has " + enemyHealth + " health remaining."
+  );
   // if player choses to skip
 } else if (promptFight === "skip" || promptFight === "SKIP") {
   // confirm player wants to skip
